@@ -1,0 +1,165 @@
+/* Layout - Code Editor (60%) & Output (40%) */
+.editor-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Light Mode */
+.editor-wrapper.light {
+  background: #f5f5f5;
+  color: black;
+}
+
+/* Dark Mode */
+.editor-wrapper.dark {
+  background: #1e1e1e;
+  color: white;
+}
+
+/* Left Side - Code Editor */
+.editor-container {
+  width: 60%;
+  padding: 20px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Light Mode */
+.editor-wrapper.light .editor-container {
+  background: white;
+  color: black;
+}
+
+/* Dark Mode */
+.editor-wrapper.dark .editor-container {
+  background: #1e1e1e;
+  color: white;
+}
+
+.language-selector {
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  background: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.theme-toggle:hover {
+  background: #666;
+}
+
+/* Run Code Button */
+.execute-button {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: rgb(112, 104, 231);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: right;
+}
+
+.execute-button:hover {
+  background-color: darkblue;
+}
+
+/* Right Side - Output Console */
+.output-container {
+  width: 40%;
+  padding: 20px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Light Mode */
+.editor-wrapper.light .output-container {
+  background: #eee;
+  color: black;
+}
+
+/* Dark Mode */
+.editor-wrapper.dark .output-container {
+  background: #222;
+  color: white;
+}
+
+.output-box {
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  min-height: 100px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #333;
+  color: white;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/*  RESPONSIVENESS  */
+@media (max-width: 768px) {
+  .editor-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .editor-container, .output-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .execute-button, .theme-toggle, .language-selector {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .output-box {
+    min-height: 150px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
